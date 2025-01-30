@@ -8,9 +8,9 @@ const Home = ({ username, setUsername, room, setRoom, socket }) => {
     const joinRoom = () => {
         if (room !== '' && username !== '') {
             socket.emit('join_room', { username, room });
+            navigate('/chat', { replace: true });
         }
 
-        navigate('/chat', { replace: true });
     };
 
     return (
@@ -25,7 +25,7 @@ const Home = ({ username, setUsername, room, setRoom, socket }) => {
 
                 <select
                     className={styles.input}
-                    onChange={(e) => setUsername(e.target.value)}
+                    onChange={(e) => setRoom(e.target.value)}
                 >
                     <option>-- Select Room --</option>
                     <option value='javascript'>JavaScript</option>
