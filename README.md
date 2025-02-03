@@ -2,7 +2,7 @@
 
 Bienvenido a Chat en Tiempo Real, una aplicación que permite a los usuarios unirse a salas de chat y comunicarse en tiempo real.
 
-🚀 Características
+## 🚀 Características
 
 🔹 Creación y unión a salas de chat.
 
@@ -12,7 +12,7 @@ Bienvenido a Chat en Tiempo Real, una aplicación que permite a los usuarios uni
 
 🔹 Backend optimizado con Node.js y WebSockets.
 
-📂 Estructura del Proyecto
+## 📂 Estructura del Proyecto
 
 📦 chat-real-time
 ├── 📁 server       # Servidor backend (Node.js, Express, WebSockets)
@@ -21,7 +21,7 @@ Bienvenido a Chat en Tiempo Real, una aplicación que permite a los usuarios uni
 │   └── 📁 public  # Archivos estáticos
 └── 📄 README.md    # Documentación del proyecto
 
-🛠️ Tecnologías Utilizadas
+## 🛠️ Tecnologías Utilizadas
 
 Frontend: React, HTML, CSS
 
@@ -33,24 +33,24 @@ Otros: Socket.io, npm
 
 🔧 Instalación y Ejecución
 
-1️⃣ Clonar el repositorio
+## 1️⃣ Clonar el repositorio
 
 git clone https://github.com/tu-usuario/chat-real-time.git
 cd chat-real-time
 
-2️⃣ Configurar el Servidor
+## 2️⃣ Configurar el Servidor
 
 cd server
 npm install
 npm run dev
 
-3️⃣ Configurar el Cliente
+## 3️⃣ Configurar el Cliente
 
 cd client/client
 npm install
 npm start
 
-📌 Notas
+## 📌 Notas
 
 Asegúrate de tener Node.js y npm instalados.
 
@@ -58,6 +58,6 @@ La aplicación usa WebSockets para la comunicación en tiempo real.
 
 Se recomienda usar un entorno de desarrollo moderno como VS Code.
 
-📜 Licencia
+## 📜 Licencia
 
 Este proyecto está bajo la licencia MIT. Puedes usarlo y modificarlo libremente.
