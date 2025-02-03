@@ -1,4 +1,5 @@
-const express = require('express');
+const express = require('express'); // mongodb+srv://andresreyesceo:<db_password>@cluster0.ki9xn.mongodb.net/
+const mongoose = require('mongoose');
 const app = express();
 const http = require('http');
 const cors = require('cors');
@@ -8,6 +9,24 @@ app.use(cors());
 
 const server = http.createServer(app);
 
+try {
+    mongoose.connect("mongodb+srv://andresreyesceo:hnf3mcw.ceo@cluster0.ki9xn.mongodb.net/realtime_chat_app")
+    console.log("connected")
+    
+    const Schema = mongoose.Schema;
+    const ObjectId = mongoose.ObjectId
+    
+    const messages = new Schema({
+        id : ObjectId,
+        message : String
+    })
+    
+    const userModel = mongoose.model("appMnsj", messages )
+    console.log("DB creada")
+    
+} catch (error) {
+    console.log(error)
+}
 
 // Crea un servidor io y permite CORS desde http://localhost:3000 con metodos GET y POST
 const io = new Server(server, {
@@ -56,13 +75,8 @@ io.on('connection', (socket) => {
         let chatRoomUsers = allUsers.filter((user) => user.room === room);
         socket.to(room).emit('chatroom_users', chatRoomUsers);
         socket.emit('chatroom_users', chatRoomUsers);
-    });
+    })
 
-
-
-
-
-   
 });
 
 
