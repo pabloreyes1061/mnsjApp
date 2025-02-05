@@ -1,6 +1,6 @@
 ## Chat en Tiempo Real
 
-Bienvenido a Chat en Tiempo Real, una aplicación que permite a los usuarios unirse a salas de chat y comunicarse en tiempo real.
+Chat en Tiempo Real, una aplicación que permite a los usuarios unirse a salas de chat y comunicarse en tiempo real.
 
 ## 🚀 Características
 
@@ -17,9 +17,9 @@ Bienvenido a Chat en Tiempo Real, una aplicación que permite a los usuarios uni
 📦 chat-real-time
 ├── 📁 server       # Servidor backend (Node.js, Express, WebSockets)
 ├── 📁 client       # Cliente frontend (React)
-│   ├── 📁 client  # Aplicación React
-│   └── 📁 public  # Archivos estáticos
-└── 📄 README.md    # Documentación del proyecto
+    ├── 📁 client  # Aplicación React
+    └── 📁 public  # Archivos estáticos
+
 
 ## 🛠️ Tecnologías Utilizadas
 

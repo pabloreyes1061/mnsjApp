@@ -9,24 +9,35 @@ app.use(cors());
 
 const server = http.createServer(app);
 
-try {
-    mongoose.connect("mongodb+srv://andresreyesceo:hnf3mcw.ceo@cluster0.ki9xn.mongodb.net/realtime_chat_app")
-    console.log("connected")
-    
-    const Schema = mongoose.Schema;
-    const ObjectId = mongoose.ObjectId
-    
-    const messages = new Schema({
-        id : ObjectId,
-        message : String
-    })
-    
-    const userModel = mongoose.model("appMnsj", messages )
-    console.log("DB creada")
-    
-} catch (error) {
-    console.log(error)
+
+async function connectDB() {
+    try {
+        await mongoose.connect("mongodb+srv://andresreyesceo:hnf3mcw.ceo@cluster0.ki9xn.mongodb.net/realtime_chat_app", );
+
+        console.log("✅ Conectado a MongoDB Atlas");
+
+        // Definir el esquema
+        const messageSchema = new mongoose.Schema({
+            message: { type: String, required: true }
+        });
+
+        // Crear el modelo
+        const MessageModel = mongoose.model("Messages", messageSchema);
+
+        console.log("✅ Modelo creado");
+
+        // Insertar un mensaje de prueba (opcional)
+        const newMessage = new MessageModel({ message: "wrong number" });
+        await newMessage.save();
+        console.log("✅ Mensaje guardado en la BD");
+        
+    } catch (error) {
+        console.error("❌ Error conectando a MongoDB:", error);
+    }
 }
+
+// Llamar a la función para conectar
+connectDB();
 
 // Crea un servidor io y permite CORS desde http://localhost:3000 con metodos GET y POST
 const io = new Server(server, {
